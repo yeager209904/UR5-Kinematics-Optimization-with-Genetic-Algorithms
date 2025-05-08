@@ -1,0 +1,11 @@
+Model Information:
+* title:	ABB Articulated Robot - IRB 4600
+* source:	https://sketchfab.com/3d-models/abb-articulated-robot-irb-4600-692283cd25df4813a02171a130124bb6
+* author:	MR.AnyCAD (https://sketchfab.com/MRAnyCAD)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "ABB Articulated Robot - IRB 4600" (https://sketchfab.com/3d-models/abb-articulated-robot-irb-4600-692283cd25df4813a02171a130124bb6) by MR.AnyCAD (https://sketchfab.com/MRAnyCAD) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

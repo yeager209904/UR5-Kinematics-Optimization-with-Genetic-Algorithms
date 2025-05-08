@@ -1,0 +1,205 @@
+body {
+  font-family: monospace;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+header {
+  background-color: #f9004d;
+  color: white;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+}
+
+main {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.simulator-theory p {
+  font-size: 1.2rem; /* Increase font size for paragraphs */
+  list-style-type: disc; /* Use disc as the point symbol */
+  margin-left: 20px; /* Add indentation for better readability */
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0.5em 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0.5em 0;
+}
+
+.dh-parameter-table, .joint-angles, .joint-angles-display {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.dh-parameter-table table, .joint-angles, .joint-angles-display table {
+  width: 100%;
+  border-collapse: collapse;
+  border: #333;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+}
+
+.dh-parameter-table th, .dh-parameter-table td, .joint-angles, .joint-angles-display th, .joint-angles-display td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+.dh-parameter-table th, .joint-angles, .joint-angles-display th {
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#container3D {
+  width: 60%;
+  height: 600px;
+  border: 5px solid black;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#container3D canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid black;
+  align-items: center;
+  gap: 20px;
+  width: 40%;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.sliders label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sliders input[type="range"] {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.transformation-matrix {
+  width: 100%;
+}
+
+.transformation-matrix table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.transformation-matrix th, .transformation-matrix td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.transformation-matrix th {
+  background-color: #f2f2f2;
+}
+
+.joint-angles-display table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.joint-angles-display th, .joint-angles-display td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.joint-angles-display th {
+  background-color: #f2f2f2;
+}
+
+.end-effector-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.end-effector-input input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+  font-size: 1.2rem;
+}
+
+.end-effector-input button {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.end-effector-input button:hover {
+  background-color: #555;
+}
+
+footer {
+  background-color: #f9004d;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  bottom: 0;
+  font-size: 1.2rem;
+}

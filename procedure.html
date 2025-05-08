@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedure</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; 
+            padding: 0; 
+            background-color: white;
+            color: black; 
+        }
+        .content {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .header-left-side {
+            max-width: 100%; 
+        }
+        .header-right-side {
+            display: none; 
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        h1 {
+            color: black; 
+        }
+        h1, h2, h3 {
+            color: #f9004d; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left-side">
+            <h1>PROCEDURE</h1>
+            <div class="content">
+                <h2>Forward Kinematics</h2>
+                <h2>Insert Joint Values:</h2>
+                <p>Insert different values of joint angles (θ) within the joint range as prescribed in the theory part. Click "OK" to get the output orientation and position of the end effector.</p>
+
+                <h2>Visualize Link Movements:</h2>
+                <p>To see the individual movements of the links, drag the sliders on the controller panel.</p>
+
+                <h2>Obtain Transformation Matrix:</h2>
+                <p>The transformation matrix for a particular position and orientation can be obtained either through the input panel or via the controller.</p>
+
+                <h2>View Manipulator Position:</h2>
+                <p>The end-effector position is displayed after each time the slider value is updated.</p><br>
+
+                <h2>Inverse Kinematics</h2>
+                <h2>Initialization:</h2>
+                <p>Create Initial Population: The algorithm begins by creating an initial population of random solutions. Each solution is a set of joint angles (θ1, θ2, θ3, θ4, θ5, θ6).</p>
+                <p>Population Size: This is set to 200. Each individual in the population is a potential solution.</p>
+                
+                <h2>Fitness Evaluation:</h2>
+                <p>Calculate Fitness: Each individual (set of joint angles) is evaluated based on its fitness. Fitness is determined by how close the end-effector position (calculated via forward kinematics) is to the desired position.</p>
+                <p>Fitness Function: The fitness function calculates the inverse of the Euclidean distance between the end-effector position and the desired position. The closer an individual's end-effector position is to the target, the higher its fitness score.</p>
+                
+                <h2>Selection:</h2>
+                <p>Select Parents: Individuals are selected to become parents based on their fitness scores. Selection is probabilistic, meaning that individuals with higher fitness have a higher chance of being selected.</p>
+                <p>Method: Roulette Wheel Selection is typically used, where the probability of selecting an individual is proportional to its fitness.</p>
+                
+                <h2>Crossover:</h2>
+                <p>Crossover Parents: Pairs of parents are selected and crossed over to produce offspring. The crossover point is randomly selected.</p>
+                <p>Crossover Rate: Determines the probability of crossover happening. In this case, it is set to 0.8 (80%).</p>
+                
+                <h2>Mutation:</h2>
+                <p>Mutate Offspring: After crossover, offspring are subjected to mutation. Each joint angle in an offspring has a chance of being mutated by a small random value.</p>
+                <p>Mutation Rate: Determines the probability of each gene (joint angle) being mutated. Here, it is set to 0.005 (0.5%).</p>
+                
+                <h2>Survival Selection:</h2>
+                <p>Combine Population: The current population and the newly generated offspring are combined.</p>
+                <p>Select Survivors: The next generation is formed by selecting the best individuals from this combined population based on their fitness. This ensures that the best solutions are carried forward.</p>
+                <p>Elite Selection: A few of the top individuals (elite) are always carried forward to the next generation to ensure the best solutions are preserved.</p>
+                
+                <h2>Termination:</h2>
+                <p>Max Generations: The process repeats for a fixed number of generations (200).</p>
+                <p>Early Stopping: If a solution with a very high fitness (indicating a very close match to the desired position) is found, the algorithm can terminate early.</p>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: monospace; 
+            margin: 0; 
+            padding: 0;
+            background-color: white;
+            color: #333; 
+        }
+        .content {
+            font-family: monospace;
+            line-height: 1.6;
+            margin: 0; 
+            padding: 20px; 
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .header-left-side {
+            max-width: 100%; 
+        }
+        .header-right-side {
+            display: none; 
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        h1, h2, h3 {
+            color: #f9004d; 
+        }
+        p {
+            color: black; /* Set paragraph color to black */
+        }
+        h2 {
+            font-size: 1.5rem; /* Slightly smaller than h1 */
+            margin-bottom: 10px; /* Reduce margin bottom */
+        }
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .center-image img {
+            max-width: 100%;
+            width: 600px; /* Increased width for better visibility */
+        }
+        .left-image {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .left-image img {
+            max-width: 100%;
+            width: 1200px; 
+            margin: 20px 0; 
+        }
+        .small-image img {
+            max-width: 100%;
+            width: 700px; 
+            margin: 20px 0; 
+        }
+        figcaption {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left-side">
+            <h1>THEORY</h1>
+            <div class="content">
+                <p>This section explores the theoretical foundation of the UR5 manipulator, including its history, components, and kinematic principles. Inverse kinematics involves calculating the joint parameters needed to achieve a desired position and orientation of the end effector. For the UR5 robot arm, this process requires defining the D-H parameters and using them to derive the equations that relate joint angles to the end effector's position and orientation. Here, we'll outline the steps to achieve this, starting with the general terminology and D-H parameter setup.</p>
+            </div>
+            <h2>INTRODUCTION</h2>
+            <div class="content">
+                <p>The UR5 robot, developed by Universal Robots, is a versatile and widely used robotic arm known for its flexibility, ease of use, and collaborative capabilities. Since its introduction, the UR5 has been adopted in various industries for tasks ranging from assembly and packaging to welding and quality inspection.</p>
+                <p>The UR5 robot consists of several key components: the base, which provides stability and support; the shoulder, which facilitates initial elevation movement; the elbow, which allows for additional articulation and reach; and three wrist joints (Wrist 1, Wrist 2, Wrist 3) that provide rotational movement and complex orientation adjustments. The end effector performs the manipulative tasks, such as gripping or welding. The UR5's components are categorized into mechanical parts, which include the structural arms and joints, and electronic parts, which consist of motors, sensors, and control systems that drive and regulate the robot's movements.</p>
+                <p>The UR5 robot has six degrees of freedom, allowing movement in six rotational directions. Forward kinematics involves calculating the position and orientation of the end effector based on given joint parameters, using Denavit-Hartenberg (D-H) parameters to systematically describe the robot's geometry. Inverse kinematics, on the other hand, determines the joint parameters needed to achieve a desired position and orientation of the end effector.</p>
+                <figure class="center-image">
+                    <img src="images/ur5_real.jpg" alt="UR5 Robot">
+                    <figcaption>Fig 1: UR5</figcaption>
+                </figure>
+            </div>
+            <h2>GENETIC ALGORITHM</h2>
+            <div class="content">
+                <p>Genetic Algorithms (GAs) are adaptive heuristic search algorithms that belong to the larger part of evolutionary algorithms. Genetic algorithms are based on the ideas of natural selection and genetics. These are intelligent exploitation of random searches provided with historical data to direct the search into the region of better performance in solution space. They are commonly used to generate high-quality solutions for optimization problems and search problems.</p>
+                <p>Genetic algorithms simulate the process of natural selection which means those species that can adapt to changes in their environment can survive and reproduce and go to the next generation. In simple words, they simulate “survival of the fittest” among individuals of consecutive generations to solve a problem. Each generation consists of a population of individuals and each individual represents a point in search space and possible solution. Each individual is represented as a string of character/integer/float/bits. This string is analogous to the Chromosome.</p>
+                <figure class="center-image">
+                    <img src="images/genetic_algorithm.jpg" alt="Genetic Algorithm">
+                    <figcaption>Fig 2: Genetic Algorithm flowchart</figcaption>
+                </figure>
+            </div>
+            <h2>FITNESS SCORE</h2>
+            <div class="content">
+                <p>Fitness score is the representation and sometimes the value of your objective function. The fitness score determines the fitness or acceptability of a solution set/ chromosome.</p>
+                <p>For example, if you are aiming to optimize the efficiency of a system, then in that case the function which calculates your efficiency is your objective function and the value of the objective function i.e. efficiency is your fitness score. A solution with efficiency 98% is more fit than a solution with efficiency 97%.</p>
+            </div>
+            <h2>GENERAL TERMINOLOGY IN ROBOTICS</h2>
+            <div class="content">
+            </div>
+            <h2>WORKSPACE</h2>
+            <p>The reachable workspace of a robot's end-effector is the manifold of reachable frames.</p>
+            <h2>ACCURACY</h2>
+            <p>A robot's ability to position its wrist end at a desired target point within the work volume, defined in terms of spatial resolution. It depends on the technology and the control increments.</p>
+            <h2>REPEATABILITY</h2>
+            <p>A statistical term associated with accuracy. If a robot joint moves by the same angle from a certain point multiple times, and the same error is repeated, then the repeatability is high and the accuracy is poor.</p>
+            <h2>SAFETY</h2>
+            <p>The ability to reduce human-robot impact force and ensure human safety is fundamental for human-friendly robots.</p>
+            <h2>D-H PARAMETERS FOR UR5</h2>
+            <p>The Denavit-Hartenberg (D-H) parameters for the UR5 robot can be generated by analyzing the robot's structure and link configuration. The UR5 robot arm has six revolute joints, and the D-H parameters for each joint describe the relationships between these joints. Below is a detailed table of the D-H parameters for the UR5 robot arm.</p>
+            <figure class="center-image">
+                <img src="images/ur5_link.jpg" alt="Frame assessment of UR5 manipulator">
+                <figcaption>Fig 3: Frame assessment of UR5 manipulator</figcaption>
+            </figure>
+            <figure class="left-image">
+                <img src="images/table1.jpg" alt="UR5 D-H parameter table">
+            </figure>
+            <figure class="small-image">
+                <img src="images/matrix.jpg" alt="UR5 Matrix">
+                <img src="images/transformation_matrix.jpg" alt="UR5 Matrix">
+            </figure>
+            <div class="content">
+            </div>
+        </div>
+    </header>
+</body>
+</html>

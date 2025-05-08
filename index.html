@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Forward and Inverse Kinematics Simulation</h1>
+  </header>
+  <main>
+    <!-- Simulator Theory Section -->
+    <section class="simulator-theory">
+      <h2>Simulator Theory</h2>
+      <ul>
+        <li>
+          <p>
+            The UR5 manipulator, manufactured by Universal Robots, is a widely used robotic arm in industrial automation. It consists of six revolute joints, each capable of rotational motion. The forward kinematics of the UR5 manipulator involve determining the position and orientation of the end-effector based on the joint angles.
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            The Denavit-Hartenberg (DH) parameters are utilized to describe the geometry and kinematics of the UR5. These parameters include the link length (a), link twist (α), link offset (d), and joint angle (θ). By applying DH parameters, the transformation matrices between adjacent links are computed, facilitating the calculation of the end-effector position in 3D space.
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            In this simulation, users can manipulate the joint angles using sliders to observe the corresponding changes in the robot's configuration. The transformation matrix is dynamically updated to reflect the current state of the manipulator. Additionally, users can input desired end-effector positions to calculate the inverse kinematics and determine the joint angles required to reach the specified point.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- DH Parameter Table Section -->
+    <section class="dh-parameter-table">
+      <h2>DH Parameter Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>a</th>
+            <th>α (alpha)</th>
+            <th>d</th>
+            <th>theta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>π/2</td>
+            <td>0.08196</td>
+            <td id="d1">0</td>
+          </tr>
+          <tr>
+            <td>0.425</td>
+            <td>0</td>
+            <td>0</td>
+            <td id="d2">0</td>
+          </tr>
+          <tr>
+            <td>0.39225</td>
+            <td>0</td>
+            <td>0</td>
+            <td id="d3">0</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>π/2</td>
+            <td>0.10915</td>
+            <td id="d4">0</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>-π/2</td>
+            <td>0.09456</td>
+            <td id="d5">0</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0.0823</td>
+            <td id="d6">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3D Simulation Section -->
+    <section class="container">
+      <div id="container3D" class="canvas-container"></div>
+      <div class="controls-container">
+        <div class="sliders">   
+          <label for="theta1Slider">θ1: <input type="range" id="theta1Slider" min="-180" max="180" value="0"></label>
+          <label for="theta2Slider">θ2: <input type="range" id="theta2Slider" min="-180" max="180" value="0"></label>
+          <label for="theta3Slider">θ3: <input type="range" id="theta3Slider" min="-180" max="180" value="0"></label>
+          <label for="theta4Slider">θ4: <input type="range" id="theta4Slider" min="-180" max="180" value="0"></label>
+          <label for="theta5Slider">θ5: <input type="range" id="theta5Slider" min="-180" max="180" value="0"></label>
+          <label for="theta6Slider">θ6: <input type="range" id="theta6Slider" min="-180" max="180" value="0"></label>
+        </div>
+        <div class="transformation-matrix">
+          <h2>Transformation Matrix</h2>
+          <table id="transformationMatrix">
+            <thead>
+              <tr>
+                <th colspan="4">Matrix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Empty body to be filled by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        <div id="endEffectorPosition"></div>
+      </div>
+    </section>
+
+    <!-- Joint Angles Display Section -->
+    <section id="jointAngles">
+      <div class="joint-angle">
+        <p>Joint 1: <span id="angle1">0</span>°</p>
+      </div>
+      <div class="joint-angle">
+        <p>Joint 2: <span id="angle2">0</span>°</p>
+      </div>
+      <div class="joint-angle">
+        <p>Joint 3: <span id="angle3">0</span>°</p>
+      </div>
+      <div class="joint-angle">
+        <p>Joint 4: <span id="angle4">0</span>°</p>
+      </div>
+      <div class="joint-angle">
+        <p>Joint 5: <span id="angle5">0</span>°</p>
+      </div>
+      <div class="joint-angle">
+        <p>Joint 6: <span id="angle6">0</span>°</p>
+      </div>
+    </section>
+    <div class="end-effector-input">
+      <label for="endEffectorInput">Enter Desired End-Effector Position (x,y,z):</label>
+      <input type="text" id="endEffectorInput" placeholder="e.g., 0.5,0.5,0.5">
+      <button id="calculateIKButton">Calculate IK</button>
+    </div>
+  </main>
+  <script type="module" src="js/main.js"></script>
+  <footer>
+    <p>Made by Group 14</p>
+  </footer>
+</body>
+</html>

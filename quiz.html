@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif; /* Changed font to Josefin Sans */
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+        }
+        .content {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .header-left-side {
+            max-width: 100%;
+        }
+        .header-right-side {
+            display: none;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #f9004d; /* Changed button background color to pink */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #d7003a; /* Darker pink on hover */
+            transition: 0.3s;
+        }
+        h1, h2, h3, p {
+            color: #f9004d; /* Changed color to main pink color */
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left-side">
+            <h1>Quiz</h1>
+            <div class="content">
+                <form id="quizForm">
+                    <div class="question">
+                        <p>1. What is the number of degrees of freedom (DOF) in a UR5 robot?</p>
+                        <label><input type="radio" name="q1" value="a"> a: 5</label><br>
+                        <label><input type="radio" name="q1" value="b"> b: 6</label><br>
+                        <label><input type="radio" name="q1" value="c"> c: 7</label><br>
+                        <label><input type="radio" name="q1" value="d"> d: None of these</label>
+                    </div>
+                    <div class="question">
+                        <p>2. How many prismatic joints are there in the UR5 robot?</p>
+                        <label><input type="radio" name="q2" value="a"> a: 2</label><br>
+                        <label><input type="radio" name="q2" value="b"> b: 1</label><br>
+                        <label><input type="radio" name="q2" value="c"> c: 0</label><br>
+                        <label><input type="radio" name="q2" value="d"> d: 6</label>
+                    </div>
+                    <div class="question">
+                        <p>3. What type of joints are primarily used in the UR5 robot?</p>
+                        <label><input type="radio" name="q3" value="a"> a: Prismatic joints</label><br>
+                        <label><input type="radio" name="q3" value="b"> b: Revolute joints</label><br>
+                        <label><input type="radio" name="q3" value="c"> c: Spherical joints</label><br>
+                        <label><input type="radio" name="q3" value="d"> d: Cylindrical joints</label>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="result" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Correct answers
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'b'
+            };
+
+            // User answers
+            const userAnswers = {
+                q1: document.querySelector('input[name="q1"]:checked')?.value,
+                q2: document.querySelector('input[name="q2"]:checked')?.value,
+                q3: document.querySelector('input[name="q3"]:checked')?.value
+            };
+
+            let correctCount = 0;
+
+            // Check answers and count correct ones
+            for (let key in correctAnswers) {
+                if (correctAnswers[key] === userAnswers[key]) {
+                    correctCount++;
+                }
+            }
+
+            // Display result
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<p>You got ${correctCount} out of 3 questions correct.</p>`;
+
+            // Display correct answers
+            resultDiv.innerHTML += `
+                <p>Correct answers:</p>
+                <ul>
+                    <li>1. What is the number of degrees of freedom (DOF) in a UR5 robot? <strong>b: 6</strong></li>
+                    <li>2. How many prismatic joints are there in the UR5 robot? <strong>c: 0</strong></li>
+                    <li>3. What type of joints are primarily used in the UR5 robot? <strong>b: Revolute joints</strong></li>
+                </ul>
+            `;
+        });
+    </script>
+</body>
+</html>

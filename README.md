@@ -1,6 +1,6 @@
 # **UR5 Kinematics Optimization with Genetic Algorithms**
 
-![UR5 Robotic Manipulator](https://www.google.com/imgres?q=ur5%20robotic%20manipulator&imgurl=https%3A%2F%2Fstore.clearpathrobotics.com%2Fcdn%2Fshop%2Fproducts%2Fur5.png%3Fv%3D1541621897&imgrefurl=https%3A%2F%2Fstore.clearpathrobotics.com%2Fproducts%2Funiversal-robots-ur5&docid=G4IM4PVH1AQ3IM&tbnid=EfBQ2P_EDA6z4M&vet=12ahUKEwiqnv-8rJONAxWmSPEDHY3aAQQQM3oECBoQAA..i&w=300&h=300&hcb=2&ved=2ahUKEwiqnv-8rJONAxWmSPEDHY3aAQQQM3oECBoQAA) <!-- Replace with actual image of UR5 -->
+![UR5 Robotic Manipulator](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtoOnahUE8h9pKZchqDnKYMnED6F2_v_d0f2ZR8oPePcxsoLTij2NTMbJ7tkrHMlf1Ano&usqp=CAU) <!-- Replace with actual image of UR5 -->
 
 ## **Overview**
 
